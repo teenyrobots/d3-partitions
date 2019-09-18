@@ -4,14 +4,15 @@ let theData = {
   {
     "title": "Funding",
     "descrip": "While grants are the lifeblood of DEI in journalism, there are also opportunities to raise funds through crowdfunding, and through private investment focused on and/or led by women and people of color.",
-    "interventions": [
+    "children": [
         {
         "name": "Crowdfunding",
         "short": "Crowdfunding can be an important source of revenue for women and founders of color, who are less likely to receive private investment.",
         "description": "Crowdfunding can be an important source of revenue for women and founders of color, who are less likely to receive private investment. Learn more:",
         "examples": [
           {"url":"https://www.journalism.org/2016/01/20/crowdfunded-journalism/", "text":"PEW's research on crowdfunding in journalism"}
-          ]
+        ],
+        "size": 1
         },
         {
         "name": "Investor Diversity",
@@ -21,7 +22,8 @@ let theData = {
           {"url":"https://www.foundersforchange.org/diverse-investors-list", "text":"Founders for Change Diverse Investors List"},
           {"url":"https://www.startupfunding.co/blog/30-top-angel-groups-venture-capital-firms-for-women-entrepreneurs", "text":"VC funds focused on women"},
           {"url":"https://www.startupfunding.co/blog/15-top-vc-funds-for-lgbtq-and-people-of-color", "text":"VC funds for LGBTQ people and people of color"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Grants",
@@ -30,7 +32,8 @@ let theData = {
         "examples": [
           {"url":"Supporting Diversity, Equity, and Inclusion in Journalism: Trends in National Grantmaking", "text":"Supporting Diversity, Equity, and Inclusion in Journalism: Trends in National Grantmaking"},
           {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Find grants for individuals in the Professional Development & Training tab of the Journalism DEI Tracker"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Incubators/Accelerators",
@@ -39,21 +42,23 @@ let theData = {
         "examples": [
           {"url":"https://www.aaja.org/catalyst-2018", "text":"AAJA’s Catalyst Program"},
           {"url":"https://techstars.com/comcast", "text":"Comcast NBCUniversal LIFT Labs Accelerator "}
-          ]
+          ],
+          "size": 1
         }
       ]
   },
   {
     "title": "Education/Training",
     "descrip": "Educational opportunities for journalists of all levels—from high school to executive—help journalists from diverse backgrounds gain skills and provide opportunities for covering important issues.",
-    "interventions": [
+    "children": [
         {
         "name": "High School",
         "short": "There are opportunities for high school students from diverse backgrounds to learn journalism skills through training programs.",
         "description": "There are opportunities for high school students from diverse backgrounds to learn journalism skills through training programs. See examples:",
         "examples": [
           {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Professional Development & Training examples on the Journalism DEI Tracker"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "College",
@@ -61,7 +66,8 @@ let theData = {
         "description": "Historically Black colleges and univeristies (HBCUs), Hispanic-serving intitutions (HSIs) and Tribal Colleges offer journalism degree programs at all levels. See examples:",
         "examples": [
          {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Higher Education examples on the Journalism DEI Tracker"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Scholarships",
@@ -69,14 +75,16 @@ let theData = {
         "description": "Scholarships can make a big difference to women and people of color seeking to pursue journalism careers. See examples:",
         "examples": [
             {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Professional Development & Training examples on the Journalism DEI Tracker"}
-          ]
+          ],
+          "size": 1
         },
         {"name": "Internships",
         "short": "Journalism organizations can increase DEI by changing how they run early pipeline opportunities.",
         "description": "Historically, it’s been more difficult for people of color to score internships in the journalism industry, many of which are unpaid. But organizations and publications are making concentrated efforts to provide paid internships to candidates from diverse backgrounds. See examples:",
         "examples": [
           {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Professional Development & Training tab of the Journalism DEI Tracker"}
-        ]
+        ],
+        "size": 1
         },
         {
         "name": "Fellowships",
@@ -84,7 +92,8 @@ let theData = {
         "description": "Fellowships can help journalists gain specific expertise on pressing topics, and bring fresh perspectives to journalism coverage. See examples:",
         "examples": [
           {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Professional Development & Training examples on the Journalism DEI Tracker"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Mid-career",
@@ -92,7 +101,8 @@ let theData = {
         "description": "Mid-career programs help journalists hone leadership skills and propel them to the next level of their careers. See examples:",
         "examples": [
         {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Professional Development & Training examples on the Journalism DEI Tracker"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Executive",
@@ -100,14 +110,15 @@ let theData = {
         "description": "Executive training and leadership programs prepare journalism leaders for success in a rapidly changing industry. See examples:",
         "examples": [
           {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Professional Development & Training examples on the Journalism DEI Tracker"}
-          ]
+          ],
+          "size": 1
         }
       ]
   },
   {
     "title": "Culture",
     "descrip": "Journalism organizations can increase DEI by changing how they run early pipeline opportunities, restructuring hiring practices, and actively creating cultures in which all employees can flourish. This includes a culture with leadership and board diversity, robust human resources policies, external accountability, and more.",
-    "interventions": [
+    "children": [
         {
         "name": "Leadership",
         "short": "Leadership diversity in the news industry is growing, though still not representative.",
@@ -116,7 +127,8 @@ let theData = {
           {"url":"https://www.asne.org/diversity-survey-2018/", "text":"ASNE: 2018 Newsroom Diversity Survey"},
           {"url":"http://www.womensmediacenter.com/reports/the-status-of-women-of-color-in-the-u-s-media-2018-full-report", "text":"Women’s Media Center: The Status of Women of Color in the US Media 2018"},
           {"url":"https://www.iwmf.org/our-research/global-report/", "text":"International Women’s Media Foundation: Global report on the status of women in the news media"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "DEI-focused roles",
@@ -125,7 +137,8 @@ let theData = {
         "examples": [
           {"url":"https://www.cjr.org/analysis/diversity_newsrooms_jobs_college_mentorship.php", "text":"Critical diversity checklist for newsroom managers"},
           {"url":"https://www.propublica.org/article/what-propublica-is-doing-about-diversity-in-2019", "text":"ProPublica's Diversity Committee"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Recuritment & Hiring",
@@ -135,7 +148,8 @@ let theData = {
             {"url":"https://hbr.org/2017/06/7-practical-ways-to-reduce-bias-in-your-hiring-process", "text":"Reduce Bias in Hiring"},
             {"url":"https://medium.com/the-engaged-journalism-lab", "text":"See the DEI Tracker for organizations and universities for recruitment"},
             {"url":"https://www.propublica.org/article/what-propublica-is-doing-about-diversity-in-2019", "text":"ProPublica's Rooney Rule"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Human resources policies",
@@ -145,7 +159,8 @@ let theData = {
           {"url":"https://www.poynter.org/reporting-editing/2017/the-news-business-is-unfair-to-journalists-with-children-lets-change-it-for-the-better-update4/", "text":"Current newsroom policies don’t support parents"},
           {"url":"https://www.poynter.org/reporting-editing/2017/comparing-parental-leave-policies-in-american-newsrooms/", "text":"Comparing newsroom family leave policies"},
           {"url":"https://www.spj.org/harassment.asp", "text":"Resources for combating sexual harassment "}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Mentorship and peer groups",
@@ -154,7 +169,8 @@ let theData = {
         "examples": [
            {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Professional Organization examples on the Journalism DEI Tracker"},
            {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Professional Development & Training examples on the Journalism DEI Tracker"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "DEI trainings",
@@ -163,7 +179,8 @@ let theData = {
         "examples": [
           {"url":"https://hbr.org/2017/07/two-types-of-diversity-training-that-really-work", "text":"Diversity training that works"},
           {"url":"https://rtdna.org/uploads/files/Updated_Revised_Diversity_Toolkit_Complete.pdf", "text":"RTDNA’s Diversity Toolkit"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "External accountability",
@@ -173,14 +190,15 @@ let theData = {
             {"url":"https://www.npr.org/sections/publiceditor/2018/01/23/570204215/nprs-staff-diversity-numbers-2017", "text":"NPR publishes metrics and related year-over-year analysis"},
             {"url":"https://www.nytco.com/company/diversity-and-inclusion/", "text":"New York Times’ annual diversity report"},
             {"url":"https://www.propublica.org/article/what-propublica-is-doing-about-diversity-in-2018", "text":"ProPublica publishes internal metrics"}
-          ]
+          ],
+          "size": 1
         }
     ]
   },
   {
     "title": "Coverage",
     "descrip": "News outlets—from mainstream organizations to smaller outlets focused on specific communities—can better serve audiences by focusing on relevant topics, using diverse voices in sourcing, following best practices for tone, voice, and style, and using coverage to advance solutions.",
-    "interventions": [
+    "children": [
         {
         "name": "Topics/beats",
         "short": "News outlets—from mainstream organizations to smaller outlets focused on specific communities—can better serve audiences by focusing on relevant topics.",
@@ -188,7 +206,8 @@ let theData = {
         "examples": [
             {"url":"https://archives.cjr.org/minority_reports/race_beats.php?page=all", "text":"The history of race beats"},
             {"url":"https://medium.com/the-engaged-journalism-lab", "text":"See nonprofit news organizations serving diverse communities on the News Outlets & Projects tab of the DEI Tracker"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Sourcing",
@@ -198,7 +217,8 @@ let theData = {
           {"url":"https://www.spj.org/dtb6.asp", "text":"Tips for better sourcing"},
           {"url":"https://diversesources.org/", "text":"Diverse Sources"},
           {"url":"https://editorsofcolor.com/diverse-databases/", "text":"Editors of Color’s Diverse Databases"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Tone/voice/style",
@@ -209,7 +229,8 @@ let theData = {
             {"url":"https://www.nlgja.org/resources/journalists-toolbox/", "text":"The Association of LGBTQ Journalists’ Journalists Toolbox "},
             {"url":"https://najanewsroom.com/wp-content/uploads/2018/11/NAJA_Reporting_and_Indigenous_Terminology_Guide.pdf", "text":"Native American Journalists Association: Reporting and Indigenous Terminology "},
             {"url":"https://medium.com/the-engaged-journalism-lab", "text":"See Style Guides on the Resources tab of the Journalism DEI Tracker"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Collaborative reporting",
@@ -218,7 +239,8 @@ let theData = {
         "examples": [
           {"url":"https://resolvephilly.org/", "text":"Resolve Philly"},
           {"url":"https://www.detroitjournalism.org/about/", "text":"Detroit Journalism Cooperative"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Solutions Journalism",
@@ -226,14 +248,15 @@ let theData = {
         "description": "Coverage can also work to actively promote solutions to inequity, rather than simply report on them. Learn more:",
         "examples": [
           {"url":"https://storytracker.solutionsjournalism.org/search?q%5Bissue_areas%5D%5B0%5D%5Bvalue%5D=756&q%5Bissue_areas%5D%5B0%5D%5Blevel%5D=2&q%5Bissue_areas%5D%5B0%5D%5BparentId%5D=&q%5Bissue_areas%5D%5B0%5D%5Blevel1Id%5D=724&q%5Bfull_text_on%5D=false", "text":"Solutions Journalism Network Story Tracker"}
-          ]
+          ],
+          "size": 1
         }
       ]
   },
   {
     "title": "Engagement",
     "descrip": "Engaged journalism practices, which put the community at the center of reporting, can help raise voices that are not always heard. Engagement can include a series of practices that put the audience first, community partnerships, events, media training, and crowdsourcing.",
-    "interventions": [
+    "children": [
         {
         "name": "Audience-driven reporting",
         "short": "Audience-driven reporting practices put the community at the center of reporting.",
@@ -241,7 +264,8 @@ let theData = {
         "examples": [
           {"url":"https://www.poynter.org/reporting-editing/2015/5-ways-to-bring-different-voices-into-your-stories/", "text":"Ways to Bring Different Voices Into Stories"},
           {"url":"https://medium.com/the-engaged-journalism-lab/", "text":"See more examples on the Engaged Journalism Lab"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Community partnerships",
@@ -250,7 +274,8 @@ let theData = {
         "examples": [
           {"url":"https://chi.vote/", "text":"Chi.Vote"},
           {"url":"https://www.chicagoreporter.com/", "text":"The Chicago Reporter"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Events",
@@ -259,7 +284,8 @@ let theData = {
         "examples": [
           {"url":"https://www.scpr.org/topics/special-series-black-infant-mortality", "text":"KPCC’s events on Black infant mortality"},
           {"url":"https://www.citybureau.org/publicnewsroom ", "text":"City Bureau"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Media production training",
@@ -268,7 +294,8 @@ let theData = {
         "examples": [
           {"url":"https://boyleheightsbeat.com/youth-news-team-2017-2018/ ", "text":"Boyle Heights Beat"},
           {"url":"https://www.citybureau.org/documenters/", "text":"City Bureau"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Crowdsourcing",
@@ -276,21 +303,23 @@ let theData = {
         "description": "Crowdsourcing allows audience members to contribute to reporting directly, ideally reflecting a more representative set of perspectives. Learn more:",
         "examples": [
           {"url":"https://www.cjr.org/tow_center_reports/guide_to_crowdsourcing.php", "text":"CJR’s Guide to Crowdsourcing"}
-          ]
+          ],
+          "size": 1
         }
       ]
   },
   {
     "title": "Distribution",
     "descrip": "Distribution is key to reaching new audiences, physically and digitally. This includes specific demographic groups and regions, additional language groups, and lower literacy groups and can be achieved through targeted outreach and syndication.",
-    "interventions": [
+    "children": [
         {
         "name": "Targeted outreach",
         "short": "Targeted outreach allows for connecting with specific populations and regions.",
         "description": "Targeted outreach allows for connecting with specific populations and regions. Learn more:",
         "examples": [
           {"url":"https://medium.com/engagement-at-kpcc/kpcc-studied-how-to-cover-the-2020-census-so-you-dont-have-to-841298159739", "text":"KPCC's Outreach around the 2020 Census "}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Cross-publication/syndication",
@@ -299,7 +328,8 @@ let theData = {
         "examples": [
           {"url":"https://www.futuromediagroup.org/", "text":"Futuro Media produces series that they then sell to national outlets"},
           {"url":"https://www.citybureau.org/articles", "text":"City Bureau works with editors at local and national news outlets to co-publish content online and in print"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Multiple languages",
@@ -308,7 +338,8 @@ let theData = {
         "examples": [
           {"url":"http://borderzine.com/", "text":"Borderzine"},
           {"url":"https://boyleheightsbeat.com/", "text":"Boyle Heights Beat"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Lower literacy options",
@@ -316,14 +347,15 @@ let theData = {
         "description": "Reaching lower literacy audiences is increasingly possible through new storytelling methods and tools. Learn more:",
         "examples": [
           {"url":"https://ijnet.org/en/story/storytelling-tools-reach-low-literate-readers", "text":"International Journalists’ Network’s Guide to Reaching Lower Literacy Groups"}
-          ]
+          ],
+          "size": 1
         }
       ]
   },
   {
     "title": "Innovation",
     "descrip": "Innovative practices in journalism are breaking down traditional barriers and gatekeepers with new platforms, new storytelling methods, new editorial processes such as collaborative reporting and new business models.",
-    "interventions": [
+    "children": [
         {
         "name": "New platforms",
         "short": "Often diverse populations are shut out from the first wave of innovation, and in some cases, people with fewer resources are likely to leapfrog over existing platforms and use new ones that have a lower barrier to entry.",
@@ -331,7 +363,8 @@ let theData = {
         "examples": [
           {"url":"https://documentedny.com/whatsapp/", "text":"Documented is using Whats App to provide news to Spanish-speaking populations"},
           {"url":"https://outliermedia.org/", "text":"Outlier Media is using SMS to understand information needs of low-income residents"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "New modes of storytelling",
@@ -340,7 +373,8 @@ let theData = {
         "examples": [
           {"url":"https://www.npr.org/sections/codeswitch/", "text":"Code Switch is using new voices on an existing platform"},
           {"url":"https://www.revealnews.org/", "text":"Reveal has been experimenting with mixtures of subject matter, platform and storytelling modes"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "New business models",
@@ -349,14 +383,15 @@ let theData = {
         "examples": [
           {"url":"https://boyleheightsbeat.com/", "text":"Boyle Heights Beat is the result of a collaboration between the University of Southern California and Hoy LA "},
           {"url":"https://voicesofny.org/", "text":"Voices of NY is a publication from the Center for Community and Ethnic Media (CCEM) at the Craig Newmark Graduate School of Journalism at the City University of New York"}
-          ]
+          ],
+          "size": 1
         }
       ]
   },
   {
     "title": "Evaluation",
     "descrip": "Evaluating DEI in journalism projects goes beyond counting up the people involved. Equity in evaluation is a specific framework. While diversity metrics have their place, it’s also important to measure social impact outcomes.",
-    "interventions": [
+    "children": [
         {
         "name": "Equitable frameworks",
         "short": "Traditional evaluation frameworks often reinforce existing power dynamics, such as valuing scale over relationships, or prioritizing objectivity.",
@@ -364,7 +399,8 @@ let theData = {
         "examples": [
           {"url":"https://cep.org/the-time-is-now-to-embed-equity-in-evaluation-practices/", "text":"The time is now to embed equity in evaluation practices"},
           {"url":"https://www.racialequitytools.org/evaluate", "text":"Racial Equity Evaluation tools"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Demographic data",
@@ -373,7 +409,8 @@ let theData = {
         "examples": [
           {"url":"http://www.d5coalition.org/", "text":"D5 Coalition provides resources on demographic data collection for philanthropy."},
           {"url":"http://staging.aecf.org/resources/a-race-for-results-case-study-2/", "text":"The case for disaggregating demographic data "}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Social impact outcomes",
@@ -381,14 +418,15 @@ let theData = {
         "description": "Measuring social impact goes beyond analytics to consider structural, legal, political, and culture change outcomes. For example:",
         "examples": [
           {"url":"https://mediaimpactfunders.org/our-work/impact/", "text":"Media Impact Funders’ Impact Collection provides tools and resources for measuring the social impact of media projects."}
-          ]
+          ],
+        "size": 1
         }
       ]
   },
   {
     "title": "Larger Industry",
     "descrip": "The larger industry can support DEI within journalism through the adoption of industry standards, including best practices and sample guidelines and policies; professional organizations, and through recognizing accomplishments through awards.",
-    "interventions": [
+    "children": [
         {
         "name": "Industry standards",
         "short": "Industry standards include comparative statistics, sample guidelines and policies and best practices. ",
@@ -396,7 +434,8 @@ let theData = {
         "examples": [
           {"url":"https://www.wikipedia.org/", "text":"Guidelines from the Seattle Times"},
           {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Field status reports on the Journalism DEI tracker"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Professional Organizations",
@@ -404,7 +443,8 @@ let theData = {
         "description": "Professional organizations exist to support DEI within journalism. See examples:",
         "examples": [
           {"url":"https://medium.com/the-engaged-journalism-lab", "text":"Professional organizations on the Journalism DEI tracker"}
-          ]
+          ],
+          "size": 1
         },
         {
         "name": "Awards",
@@ -415,7 +455,8 @@ let theData = {
          {"url":"https://www.nlgja.org/awards/", "text":"Association of LGBTQ Journalists Awards"},
          {"url":"https://www.nabj.org/page/NABJAwardEntries15", "text":"National Assoication of Black Journalists Awards"}
 
-          ]
+          ],
+          "size": 1
         }
       ]
   }

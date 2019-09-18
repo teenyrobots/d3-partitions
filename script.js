@@ -12,8 +12,6 @@ var vData = {
     }]
 };
 
-
-
 var vWidth = 940;  // <-- 1
 var vHeight = 940;
 var vRadius = Math.min(vWidth, vHeight) / 2;  // < -- 2
@@ -29,18 +27,18 @@ var g = d3.select('svg')  // <-- 1
 var vLayout = d3.partition()  // <-- 1
     .size([2 * Math.PI, vRadius]);
 
+var vRoot = d3.hierarchy(theData)  // <--1
+    .sum(function (d) { return d.size });
+
 //reversing the nodes: https://stackoverflow.com/questions/50241534/d3-sunburst-chart-with-root-node-on-the-outside-ring
 var vArc = d3.arc()
     .startAngle(function (d) { return d.x0 })
     .endAngle(function (d) { return d.x1 })
-    .innerRadius(function (d) { return vRadius - d.y1 })
-    .outerRadius(function (d) { return vRadius - d.y0 });
+    .innerRadius(function (d) { return vRadius - d.y1 + vRoot.y1; })
+    .outerRadius(function (d) { return vRadius - d.y0 + vRoot.y1; });
 
-var vRoot = d3.hierarchy(vData)  // <--1
-  .sum(function (d) {
-    console.log(d);
-    return d.size; });  // <-- 2
 var vNodes = vRoot.descendants();  // <--3
+
 vLayout(vRoot);  // <--4
 
 var vSlices = g.selectAll('path') // <-- 1
@@ -52,4 +50,5 @@ vSlices.filter(function(d) { return d.parent; })
     .attr('d', vArc)
     .style('stroke', '#fff')
     .style('fill', function (d) {
-        return vColor((d.children ? d : d.parent).data.id); });
+        //if (the node has children) {return the node} else {return the parent};
+        return vColor((d.children ? d : d.parent).data.name); });
