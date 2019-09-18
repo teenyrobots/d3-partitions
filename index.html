@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta id="meta" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- we link to d3 in the head -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <title>Solutions Wheel: Interventions to support Diversity, Equity and Inclusion (DEI) in Journalism</title>
+  </head>
+  <body>
+
+    <svg></svg>
+
+      <div id="sunburstViz">
+        <div>
+          <div class="center" id="intialContent">
+            <div> <!-- This div is the flexy -->
+              <h1>Solutions Wheel: </h1>
+              <h2 class="intro">Interventions to support <br> Diversity, Equity and Inclusion (DEI) in Journalism</h2>
+            </div>
+          </div>
+
+          <div class="center" id="content">
+            <div class="">
+
+            <p class="cat">category</p>
+            <h2 class="title">the title</h2>
+            <p class="short">short description</p>
+            <p id="exShow" class="linkish" onclick="exShow()">Learn more</p>
+            </div>
+
+          </div>
+
+          <div id="ex">
+            <div>
+              <p class="cat">category</p>
+              <h2 class="title">the title</h2>
+              <p class="descrip">here is a description, it can be short or long</p>
+              <ul class="examples">
+                <li>example 1</li>
+                <li>example 2</li>
+                <li>example 3</li>
+              </ul>
+              <!-- <p class="linkish goodbye" onclick="exBye()">x</p> -->
+              <p id="goodbye" class="linkish" onclick="exBye()">close this window</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- we link to our own scripts before the end of the body -->
+    <script src="new-data.json" charset="utf-8"></script>
+    <script src="new-script.js" charset="utf-8"></script>
+
+
+  </body>
+</html>
