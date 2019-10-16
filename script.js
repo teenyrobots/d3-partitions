@@ -1,23 +1,22 @@
-var vData = {
-    'id': 'TOPICS', 'children': [{
-        'id': 'Topic A',
-        'children': [{'id': 'Sub A1', 'size': 1}, {'id': 'Sub A2', 'size': 1}]
-    }, {
-        'id': 'Topic B',
-        'children': [{'id': 'Sub B1', 'size': 1}, {'id': 'Sub B2', 'size': 1},
-	        {'id': 'Sub B3', 'size': 1}]
-    }, {
-        'id': 'Topic C',
-        'children': [{'id': 'Sub A1', 'size': 1}, {'id': 'Sub A2', 'size': 1}]
-    }]
-};
-
 var vWidth = 925;  // <-- 1
 var vHeight = 925;
 var vRadius = Math.min(vWidth, vHeight) / 2;  // < -- 2
-var vColor = d3.scaleOrdinal(d3.schemeCategory20b);   // <-- 3
+var vColor = d3.scaleOrdinal(d3.schemeCategory20b);
 
-//scales the rings: https://stackoverflow.com/questions/37684415/d3-sunburst-how-to-set-different-ring-level-widths buuut just makes it tiny
+//https://medium.com/@Elijah_Meeks/color-advice-for-data-visualization-with-d3-js-33b5adc41c90 but it doesn't work ¯\_(ツ)_/¯
+let colors = d3.scaleOrdinal()
+  .range([
+    "240, 240, 240",
+    "220, 220, 220",
+    "200, 200, 200",
+    "240, 240, 240",
+    "220, 220, 220",
+    "200, 200, 200",
+    "240, 240, 240",
+    "220, 220, 220",
+    "200, 200, 200"
+  ]);
+
 var rscale = d3.scaleLinear()
  .domain([0,(vRadius * .73),vRadius])
  .range([0,(vRadius * .98),vRadius]);
@@ -32,38 +31,36 @@ var g = d3.select('svg')  // <-- 1
 var vLayout = d3.partition()  // <-- 1
     .size([2 * Math.PI, vRadius]);
 
-var vRoot = d3.hierarchy(theData)  // <--1
-    .sum(function (d) { return d.size });
+//parses json data
+d3.json('data.json', function(error, vData) {
+     if (error) throw error;
+     drawSunburst(vData);
+});
 
-//reversing the nodes: https://stackoverflow.com/questions/50241534/d3-sunburst-chart-with-root-node-on-the-outside-ring
-var vArc = d3.arc()
+//draws the sunburst
+function drawSunburst(data) {
+  let vRoot = d3.hierarchy(data)
+    .sum(function (d) {return d.size});
+
+  var vArc = d3.arc()
     .startAngle(function (d) { return d.x0 })
     .endAngle(function (d) { return d.x1 })
-//normal
-//    .innerRadius(function (d) { return d.y0 })
-//    .outerRadius(function (d) { return d.y1 });
+    .innerRadius(function (d) { return rscale(vRadius - d.y1 + vRoot.y1); })
+    .outerRadius(function (d) { return rscale(vRadius - d.y0 + vRoot.y1); });
 
-//equal sized rings, flipped sunburst
-    // .innerRadius(function (d) { console.log("inner radius: " + (vRadius - d.y1 + vRoot.y1)); return vRadius - d.y1 + vRoot.y1; })
-    // .outerRadius(function (d) { console.log("outer radius " + (vRadius - d.y0 + vRoot.y1)); return vRadius - d.y0 + vRoot.y1; });
+  let vNodes = vRoot.descendants();
 
-//applies the scale but just makes it tiny :(
-   .innerRadius(function (d) { console.log("inner radius: " + rscale(vRadius - d.y1 + vRoot.y1)); return rscale(vRadius - d.y1 + vRoot.y1); })
-   .outerRadius(function (d) { console.log("outer radius " + rscale(vRadius - d.y0 + vRoot.y1)); return rscale(vRadius - d.y0 + vRoot.y1); });
+  vLayout(vRoot);
 
+  var vSlices = g.selectAll('path') // <-- 1
+      .data(vNodes)  // <-- 2
+      .enter()  // <-- 3
+      .append('path'); // <-- 4
 
-var vNodes = vRoot.descendants();  // <--3
-
-vLayout(vRoot);  // <--4
-
-var vSlices = g.selectAll('path') // <-- 1
-    .data(vNodes)  // <-- 2
-    .enter()  // <-- 3
-    .append('path'); // <-- 4
-
-vSlices.filter(function(d) { return d.parent; })
-    .attr('d', vArc)
-    .style('stroke', '#fff')
-    .style('fill', function (d) {
-        //if (the node has children) {return the node} else {return the parent};
-        return vColor((d.children ? d : d.parent).data.name); });
+  vSlices.filter(function(d) { return d.parent; })
+      .attr('d', vArc)
+      .style('stroke', '#fff')
+      .style('fill', function (d) {
+          //if (the node has children) {return the node} else {return the parent};
+          return vColor((d.children ? d : d.parent).data.name); });
+};
