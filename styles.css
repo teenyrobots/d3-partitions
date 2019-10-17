@@ -137,17 +137,17 @@ a:hover, a:active, .linkish:hover, .linkish:active {
 }
 
 .red {
-  fill: rgba(237, 27, 52, 1);
+  fill: rgb(237, 27, 52);
   cursor: pointer;
 }
 
 .blue {
-  fill: rgba(62, 151, 211, 1);
+  fill: rgb(62, 151, 211);
   cursor: pointer;
 }
 
 .darkred {
-  fill: rgba(124, 26, 40, 1);
+  fill: rgb(124, 26, 40);
   cursor: pointer;
 }
 

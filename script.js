@@ -1,22 +1,19 @@
-var vWidth = 925;  // <-- 1
-var vHeight = 925;
-var vRadius = Math.min(vWidth, vHeight) / 2;  // < -- 2
-var vColor = d3.scaleOrdinal(d3.schemeCategory20b);
-
-//https://medium.com/@Elijah_Meeks/color-advice-for-data-visualization-with-d3-js-33b5adc41c90 but it doesn't work ¯\_(ツ)_/¯
-let colors = d3.scaleOrdinal()
-  .range([
-    "240, 240, 240",
-    "220, 220, 220",
-    "200, 200, 200",
-    "240, 240, 240",
-    "220, 220, 220",
-    "200, 200, 200",
-    "240, 240, 240",
-    "220, 220, 220",
-    "200, 200, 200"
+let vWidth = 940,
+  vHeight = 940,
+  vRadius = Math.min(vWidth, vHeight) / 2,
+  colors = d3.scaleOrdinal().range([
+    'rgb(240, 240, 240)',
+    'rgb(220, 220, 220)',
+    'rgb(200, 200, 200)',
+    'rgb(240, 240, 240)',
+    'rgb(220, 220, 220)',
+    'rgb(200, 200, 200)',
+    'rgb(240, 240, 240)',
+    'rgb(220, 220, 220)',
+    'rgb(200, 200, 200)'
   ]);
 
+//Sunburst variables
 var rscale = d3.scaleLinear()
  .domain([0,(vRadius * .73),vRadius])
  .range([0,(vRadius * .98),vRadius]);
@@ -30,6 +27,25 @@ var g = d3.select('svg')  // <-- 1
 
 var vLayout = d3.partition()  // <-- 1
     .size([2 * Math.PI, vRadius]);
+
+
+//helper functions
+function computeTextRotation(d) {
+    var angle = (d.x0 + d.x1) / Math.PI * 90;
+    if (d.children) {
+      return (angle < 120 || angle > 270) ? angle : angle + 180; //labels as rims
+    } else {
+      return (angle < 180) ? angle - 90 : angle + 90;  // labels as spokes
+    }
+}
+
+function exShow() {
+  document.getElementById('ex').setAttribute("style", "display: flex;");
+};
+
+function exBye() {
+  document.getElementById('ex').setAttribute("style", "display: none;");
+};
 
 //parses json data
 d3.json('data.json', function(error, vData) {
@@ -52,15 +68,97 @@ function drawSunburst(data) {
 
   vLayout(vRoot);
 
-  var vSlices = g.selectAll('path') // <-- 1
-      .data(vNodes)  // <-- 2
-      .enter()  // <-- 3
-      .append('path'); // <-- 4
+  var vSlices = g.selectAll('g') // <-- 1
+    .data(vNodes)  // <-- 2
+    .enter()  // <-- 3
+    .append('g'); // <-- 4
 
-  vSlices.filter(function(d) { return d.parent; })
-      .attr('d', vArc)
-      .style('stroke', '#fff')
-      .style('fill', function (d) {
-          //if (the node has children) {return the node} else {return the parent};
-          return vColor((d.children ? d : d.parent).data.name); });
+  //builds wheel
+  vSlices.append('path')
+    .classed("path", true)
+    .filter(function(d) { return d.parent; })
+    .attr('display', function (d) { return d.depth ? null : 'none'; })
+    .attr('d', vArc)
+    .attr('stroke', '#fff')
+    .attr('fill', function (d, i) {
+      //if (the node has children) {return the node} else {return the parent};
+      return colors((d.children ? d : d.parent).data.name);
+    })
+
+    //hover functions
+    .on("mouseover", function(d) {
+      d3.select(this).classed("blue", true);
+    })
+    .on("mouseout", function(d) {
+      d3.select(this).classed("blue", false);
+    })
+    
+    //click functions
+    .on("click", function(d) {
+      //set up inner circle
+      d3.select("#intialContent").style("display", "none");
+      d3.select("#content").style("display", "flex");
+      let title = d3.selectAll('.title'),
+        cat = d3.selectAll('.cat'),
+        short = d3.selectAll('.short'),
+        ex = d3.selectAll('.examples'),
+        descrip = d3.selectAll('.descrip'),
+        exShow = d3.selectAll('#exShow');
+
+      //insert appropriate text
+      title.text(d.data.name);
+      short.text(d.data.short);
+
+      if (d.children) {
+        //insert parent text
+        title.classed('outerTitle', true);
+        cat.attr('hidden', true);
+        exShow.classed("no", true);
+      } else {
+        //insert children text
+        title.classed('outerTitle', false);
+        cat.attr('hidden', null);
+        cat.text(d.parent.data.name);
+        descrip.text(d.data.description);
+        ex.selectAll("li").remove();
+        exShow.classed("no", false);
+        for (i in d.data.examples) {
+          if (d.data.examples[i].url){
+            ex.append("li")
+                .append("a")
+                  .text(d.data.examples[i].text)
+                  .attr("href", d.data.examples[i].url)
+                  .attr("target", "_blank");
+          } else {
+            ex.append("li")
+                .append("p")
+                  .text(d.data.examples[i].text);
+          }
+        }
+      }
+
+      //make selected slice red
+      d3.selectAll(".path").classed("red", false);
+      d3.select(this).classed("red", true);
+
+    });
+
+  //adds labels
+  vSlices.append('text')
+    .filter(function(d) { return d.parent; }) //filters out the root node, which is not relevant
+    .attr('transform', function(d) { return 'translate(' + vArc.centroid(d) + ')rotate(' + computeTextRotation(d) + ')'; })
+    .attr("text-anchor", "middle")
+    .attr("dominant-baseline", "mathematical")
+    .text(function(d) { return d.data.name })
+    .classed("labels", true);
+
+  //hover functions
+  vSlices.selectAll('path')
+
+
+  //click functions
+  vSlices.selectAll('path')
+
+  ;
+
 };
